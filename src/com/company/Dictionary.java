@@ -3,25 +3,28 @@ package com.company;
 import java.util.*;
 
 public class Dictionary {
-    public String twojeSlowo;
-    public String podajSlowo;
+    public String randomWord;
+    public String typeWord;
 
 
-    public String listaSlow() {
+    public String randomizeWord() {
 
         List<String> wordsList = new ArrayList<>();
-        wordsList.add("marek");
+        wordsList.add("pies");
         wordsList.add("krem");
-        wordsList.add("trawnik");
-        wordsList.add("warkocz");
-
-        System.out.println(wordsList);
-
+        wordsList.add("karo");
+        wordsList.add("koza");
+        wordsList.add("dach");
+        wordsList.add("duch");
+        wordsList.add("lupa");
+        wordsList.add("ptak");
+        wordsList.add("noga");
+        wordsList.add("kant");
 
         Random random = new Random();
-        int index = random.nextInt(4);
-        twojeSlowo = wordsList.get(index);
-        return twojeSlowo;
+        int index = random.nextInt(10);
+        randomWord = wordsList.get(index);
+        return randomWord;
 
     }
 
@@ -29,23 +32,21 @@ public class Dictionary {
         char litera = '0';
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj slowo: ");
-         podajSlowo = scanner.next();
-        System.out.println("Podales slowo: " + podajSlowo);
-        char[] znaki = podajSlowo.toCharArray();
-        System.out.println(znaki.length);
-        Set set = new HashSet<>();
+        typeWord = scanner.next();
+        char[] znaki = typeWord.toCharArray();
+        Set mySet = new HashSet<>();
         for (char znak : znaki) {
-            set.add(znak);
+            mySet.add(znak);
         }
 
-        System.out.println("Twoj set ma wartosci: " + set + "oraz sklada sie z " + set.size() + " elementow");
-        if (set.size() == znaki.length) {
+        //System.out.println("Twoj set  sklada sie z " + mySet.size() + " elementow");
+        if (mySet.size() == znaki.length) {
             System.out.println("Twoje slowo jest izogramem");
         } else {
             System.out.println("twoje slowo nie jest izogramem!!");
             czyIzogram();
         }
-        return podajSlowo;
+        return typeWord;
 
     }
 

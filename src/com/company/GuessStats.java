@@ -10,45 +10,42 @@ public class GuessStats {
     int min;
 
 
-    public int bulls(String losoweSlowo, String podaneSlowo) {
+    public int Stats(String randomWord, String yourWord) {
 
 
-        char[] tablica = losoweSlowo.toCharArray();
-        char[] tablica2 = podaneSlowo.toCharArray();
-        min = Math.min(tablica.length, tablica2.length);
+        char[] tab1 = randomWord.toCharArray();
+        char[] tab2 = yourWord.toCharArray();
+        min = Math.min(tab1.length, tab2.length);
 
         for (int i = 0; i < min; i++) {
 
-            if (tablica[i] == tablica2[i]) {
-                System.out.println("litera jest na wlasciwym miejscu");
+            if (tab1[i] == tab2[i]) {
+                System.out.println("litery o indeksie " + (i + 1) + " sa w takich samych miejscach!");
                 bulls++;
 
-            } else {
+            }
 
-                System.out.println("litera jest w niewlasciwym miejscu");
+        }
+        for (int i = 0; i < min; i++) {
+            for (int j = 0; j < min; j++) {
 
+                if (tab2[i] == tab1[j] && i != j) {
+                    System.out.println("litera o indeksie " + (i + 1) + " w Twoim slowie, znajduje sie na indeksie  " + (j + 1) + " w randomowym slowie");
+                    cows++;
+                }
             }
         }
-        System.out.println("Liczba bulls to:" + bulls);
+        if (bulls == min) {
+            System.out.println("GRATULACJE !!!! Podales poprawne slowo!");
 
+        } else {
+            System.out.println("Liczba bulls to:" + bulls);
+            System.out.println("Liczba cows to: " + cows);
+        }
 
         return bulls;
 
-    }
-
-    public int cows(String a, String b) {
-        List lista = new ArrayList<>();
-
-        char[] tab = a.toCharArray();
-        char[] tab2 = b.toCharArray();
-        lista.add(tab);
-
-
-            System.out.println(" twoja lista znakow to " + lista.set(i));
-
-
-        return cows;
-
 
     }
+}
 

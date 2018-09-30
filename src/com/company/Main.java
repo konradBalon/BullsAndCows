@@ -1,24 +1,26 @@
 package com.company;
 
-import com.sun.org.apache.bcel.internal.generic.D2I;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
+
+
+   public static void proba() {
+       Dictionary dic = new Dictionary();
+       GuessStats guess = new GuessStats();
+       dic.randomizeWord();
+       System.out.println("Twoje slowo to: ****" );
+       while(dic.randomWord!=dic.typeWord) {
+           dic.czyIzogram();
+
+       guess.Stats(dic.randomWord, dic.typeWord);
+       guess.cows=0;
+       guess.bulls=0;
+   }}
 
     public static void main(String[] args) {
 
-        // write your code here
-        Dictionary dic = new Dictionary();
-        GuessStats guess = new GuessStats();
-        dic.listaSlow();
-        System.out.println("Twoje slowo to: " + dic.twojeSlowo);
-        dic.czyIzogram();
-        guess.bulls(dic.twojeSlowo, dic.podajSlowo);
-        guess.cows(dic.twojeSlowo, dic.podajSlowo);
+proba();
         //
-
-
+        //   System.out.println("To jest Twoja proba nr " + i);
     }
+    //  System.out.println("Nie masz wiecej prob!!!");
 }
