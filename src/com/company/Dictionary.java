@@ -3,8 +3,16 @@ package com.company;
 import java.util.*;
 
 public class Dictionary {
-    public String randomWord;
-    public String typeWord;
+    public String getRandomWord() {
+        return randomWord;
+    }
+
+    public String getTypedWord() {
+        return typedWord;
+    }
+
+    private String randomWord;
+    private String typedWord;
 
 
     public String randomizeWord() {
@@ -28,12 +36,11 @@ public class Dictionary {
 
     }
 
-    public String czyIzogram() {
-        char litera = '0';
+    public void typingWord() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj slowo: ");
-        typeWord = scanner.next();
-        char[] znaki = typeWord.toCharArray();
+        typedWord = scanner.next();
+        char[] znaki = typedWord.toCharArray();
         Set mySet = new HashSet<>();
         for (char znak : znaki) {
             mySet.add(znak);
@@ -43,10 +50,10 @@ public class Dictionary {
         if (mySet.size() == znaki.length) {
             System.out.println("Twoje slowo jest izogramem");
         } else {
-            System.out.println("twoje slowo nie jest izogramem!!");
-            czyIzogram();
+            System.out.println("twoje slowo nie jest izogramem!! \n wprowadz poprawne dane. ");
+            typingWord();
+
         }
-        return typeWord;
 
     }
 

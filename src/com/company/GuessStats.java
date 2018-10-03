@@ -4,10 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GuessStats {
-    public String slowo1;
-    int cows = 0;
-    int bulls = 0;
-    int min;
+    private int cows = 0;
+    private int bulls = 0;
+    private int min;
+
+    public int getCows() {
+        return cows;
+    }
+
+    public void setCows(int cows) {
+        this.cows = cows;
+    }
+
+    public void setBulls(int bulls) {
+        this.bulls = bulls;
+    }
+
+    public void setMin(int min) {
+        this.min = min;
+    }
+
+    public int getBulls() {
+        return bulls;
+    }
+
+    public int getMin() {
+        return min;
+    }
+
+
 
 
     public int Stats(String randomWord, String yourWord) {
@@ -35,13 +60,8 @@ public class GuessStats {
                 }
             }
         }
-        if (bulls == min) {
-            System.out.println("GRATULACJE !!!! Podales poprawne slowo!");
-
-        } else {
-            System.out.println("Liczba bulls to:" + bulls);
-            System.out.println("Liczba cows to: " + cows);
-        }
+        System.out.println("liczba Bulls to : "+bulls);
+        System.out.println("liczba Cows to : "+cows);
 
         return bulls;
 
