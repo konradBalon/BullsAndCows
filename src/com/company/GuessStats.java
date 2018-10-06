@@ -45,7 +45,7 @@ public class GuessStats {
         for (int i = 0; i < min; i++) {
 
             if (tab1[i] == tab2[i]) {
-                System.out.println("litery o indeksie " + (i + 1) + " sa w takich samych miejscach!");
+                System.out.println("Letters, which have index of, " + (i + 1) + " are the same");
                 bulls++;
 
             }
@@ -55,13 +55,13 @@ public class GuessStats {
             for (int j = 0; j < min; j++) {
 
                 if (tab2[i] == tab1[j] && i != j) {
-                    System.out.println("litera o indeksie " + (i + 1) + " w Twoim slowie, znajduje sie na indeksie  " + (j + 1) + " w randomowym slowie");
+                    System.out.println("letter index of " + (i + 1) + " in your word, has index of " + (j + 1) + " in a secret word");
                     cows++;
                 }
             }
         }
-        System.out.println("liczba Bulls to : "+bulls);
-        System.out.println("liczba Cows to : "+cows);
+        System.out.println("Bulls : "+bulls);
+        System.out.println("Cows : "+cows);
 
         return bulls;
 
